@@ -62,6 +62,9 @@ public class DockerDemo {
 		/**
 		 * CECI EST UN TEST POUR GIT - GITHUB
 		 */
+		/**
+		 * CECI EST UN TEST-2 POUR GIT - GITHUB
+		 */
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);

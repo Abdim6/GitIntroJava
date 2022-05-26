@@ -59,7 +59,9 @@ public class DockerDemo {
 		driver.get("https://www.google.com/");
 		*/
 		
-		
+		/**
+		 * CECI EST UN TEST POUR GIT - GITHUB
+		 */
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);

@@ -21,7 +21,7 @@ public class Listener implements ITestListener {
 		//ITestListener.super.onTestStart(result);
 		System.out.println("Début de la methode : "+result.getMethod().getMethodName());
 	}
-
+	
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub

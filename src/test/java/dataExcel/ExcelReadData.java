@@ -25,13 +25,14 @@ public class ExcelReadData {
 	 * Cette lecture est en dure, ça peut convenir aux données qui bougent jamais
 	 * Mais vaut mieux les variabiliser
 	 */
-		Row row = sheet.getRow(0);
-		Cell cel = row.getCell(1);
+		Row row = sheet.getRow(1);		//choisi la ligne 
+		Cell cel = row.getCell(2);		//choisi la colonne
 		System.out.println(cel);
 		System.out.println(sheet.getRow(0).getCell(0));
 		
 		String cellval = cel.getStringCellValue();
 		System.out.println(cellval);
+		System.out.println(cel);
 	}
 
 }

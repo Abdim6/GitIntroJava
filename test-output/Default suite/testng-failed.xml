@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Demo_Rapport.TableauDemo_Rapport">
+      <class name="dockerIntro.Test1">
         <methods>
-          <include name="tearnDown"/>
-          <include name="testActionsClass"/>
-          <include name="TearnDown"/>
-          <include name="SetUpDriver"/>
-          <include name="setUp"/>
+          <include name="monTest1"/>
         </methods>
-      </class> <!-- Demo_Rapport.TableauDemo_Rapport -->
+      </class> <!-- dockerIntro.Test1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

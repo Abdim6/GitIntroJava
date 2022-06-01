@@ -25,8 +25,7 @@ public class ReadDataAge {
  */
 	public static void getDataAge(String feuille) throws IOException
 	{
-		
-		
+				
 			ArrayList <String> maListe = new ArrayList<String>();
 			FileInputStream file = new FileInputStream("/Users/abdi.bileh17/Documents/ExcelData.xlsx");
 			

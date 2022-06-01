@@ -34,47 +34,6 @@ public class Base_Listeners {
 				.apply();	*/
 	}
 	
-	
-
-	/*
-	@Test
-	public void test() throws InterruptedException 
-	{
-		Thread.sleep(5000);
-	}
-	@Test
-	public WebDriver initialiseDriver() throws IOException 
-	{
-		//Mondatory, il est comprendre les enchainements des ces commandes
-		FileInputStream file = new FileInputStream("/Users/abdi.bileh17/Documents/Java/Toto_6Play/src/main/java/Ressources/Donnees.Properties");
-		
-		prop.load(file);
-		String browserName = prop.getProperty("browser");
-		System.out.println("Le test tourne avec le browser : "+browserName);
-		
-		if(browserName.equals("chrome"))
-		{
-			//execute avec chromedriver
-			System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-			 driver = new ChromeDriver();
-		}
-		
-	
-		else if(browserName.equals("firefox"))
-		{
-			//execute avec firefox driver
-			 System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-			  driver = new FirefoxDriver();
-		}
-		else if(browserName.equals("IE"))
-		{
-			//execute avec IE driver
-		}
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		return driver;
-	}
-	*/
-	
 	@AfterSuite
 	public void TearnDown()
 	{

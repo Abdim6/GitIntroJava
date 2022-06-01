@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="listeners.Listener"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+<suite parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="listeners.TableauDemo_Listeners">
+      <class name="dockerIntro.Test3">
         <methods>
-          <include name="setUp"/>
-          <include name="TearnDown"/>
-          <include name="tearnDown"/>
-          <include name="SetUpDriver"/>
-          <include name="testActionsClass"/>
+          <include name="monTest3"/>
         </methods>
-      </class> <!-- listeners.TableauDemo_Listeners -->
+      </class> <!-- dockerIntro.Test3 -->
+      <class name="dockerIntro.Test2">
+        <methods>
+          <include name="monTest2"/>
+        </methods>
+      </class> <!-- dockerIntro.Test2 -->
+      <class name="dockerIntro.Test1">
+        <methods>
+          <include name="monTest1"/>
+        </methods>
+      </class> <!-- dockerIntro.Test1 -->
+      <class name="dockerIntro.Test4">
+        <methods>
+          <include name="monTest4"/>
+        </methods>
+      </class> <!-- dockerIntro.Test4 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,5 +1,7 @@
 package demo_Rapport;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -51,7 +53,7 @@ public class DropDown_Rapport extends Base_Rapport{
 	     * @throws InterruptedException
 	     **/
 
-	    @Test
+	    @Test(priority=1)
 	    public void testSelectFunctionality() throws InterruptedException
 	    { 
 
@@ -107,16 +109,40 @@ public class DropDown_Rapport extends Base_Rapport{
 	           
 	  */         
 	    }
+	    @Test(priority=0)
+	    public void testGoogle() throws InterruptedException
+	    {
+
+	           //Thread.sleep(5000);     
+	           driver.get("https://google.com/");
+	           Thread.sleep(2000);     
+	           String title = driver.getTitle();	  
+	           System.out.println("Titre de la page : "+title);
+	          // assert.assertEquals(title, "Google");		//assert entre deux string ne fonctionne pas !!! à investiguer
+	          if( title.equalsIgnoreCase("google"))
+	          {
+
+	  	    	test.log(Status.PASS, "Accès à la page Google est OK");
+	          }
+	          else 
+	          {
+
+	  			test.fail("Le titre google est KO");
+	          }
+	    }
 
 	    /**
 	     * Tear down the setup after test completes
+	     * @throws InterruptedException 
 	     **/
 
 	    @AfterClass
-	    public void tearDown() 
+	    public void tearDown() throws InterruptedException 
 	    { 
+
+	        Thread.sleep(2000);     
 	    	test.log(Status.PASS, "Fermeture de driver est -OK-");
-	           driver.quit();
+	        driver.quit();
 	    }
 
 	}

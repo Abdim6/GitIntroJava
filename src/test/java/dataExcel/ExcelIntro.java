@@ -37,17 +37,18 @@ public class ExcelIntro
 			FileInputStream file = new FileInputStream("/Users/abdi.bileh17/Documents/ExcelData.xlsx");
 			
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
-			//tu recupère le nombre de sheet du fichier
+			//tu recupères le nombre de sheets du fichier
 			int sheets = workbook.getNumberOfSheets();
 			
 		/**
 		 * Une fois recupéré le nombre de feuille dans le fichier excel, 
-		 * on parcours les feuille jusqu'à la feuille voulue
+		 * on parcours les feuilles jusqu'à la feuille voulue
 		 */
 			for(int i=0; i<sheets;i++)
 			{
 				if (workbook.getSheetName(i).equalsIgnoreCase("DataDemo"))
 				{
+					//recupère la feuille de calcul 
 					XSSFSheet sheet = workbook.getSheetAt(i);	
 					
 					//accéder aux lignes de la feuille 
@@ -57,9 +58,9 @@ public class ExcelIntro
 					Iterator<Cell> cel = firstRow.cellIterator(); //accès aux différentes cellules de la ligne selectionnée
 					
 					
-					//On parcours les différentes cellule de la 1ere ligne 
+					//On parcours les différentes cellules de la 1ere ligne 
 					//Jusqu'a trouver la cellule qui nous interesse
-					int k=0; //cette variable est ... un compteur qui évolue avec litération
+					int k=0; //cette variable est ... un compteur qui évolue avec l'itération
 					int column=0 ; //determiner la colonne 
 					while(cel.hasNext())
 					{
@@ -81,14 +82,16 @@ public class ExcelIntro
 					while(rows.hasNext())
 					{
 						Row r = rows.next(); //Parcours les différentes ligne de la feuille
-						if (r.getCell(column).getStringCellValue().equalsIgnoreCase("Data2"))  //Ici on recupère uniquement la valeur des cellule se trouvant dans la colonne identifiée					
+						if (r.getCell(column).getStringCellValue().equalsIgnoreCase("Data2"))  //Ici on recupère uniquement la valeur des cellules se trouvant dans la colonne identifiée					
 						{
 							//ligne = j;
 							Iterator<Cell> cv = r.cellIterator();
 							while(cv.hasNext())
 							{
+								
 								//System.out.println(cv.next().getStringCellValue());
-								maListe.add(cv.next().getStringCellValue());
+								maListe.add(cv.next().getStringCellValue());		//permet d'ajouter les valeurs des cellules dans la liste
+								
 							}
 						}
 					}

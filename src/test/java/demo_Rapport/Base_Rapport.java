@@ -82,3 +82,15 @@ public class Base_Rapport {
 	}
 
 }
+
+
+/**
+ * ANALYSE LA SIMPLIFICATION DES ETAPES POUR ARRIVER JUSQU'AU LOG 
+ * 
+			ExtentReports extent = new ExtentReports();
+			ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
+			extent.attachReporter(spark);
+			extent.createTest("MyFirstTest")
+			  .log(Status.PASS, "This is a logging event for MyFirstTest, and it passed!");
+			extent.flush();
+*/

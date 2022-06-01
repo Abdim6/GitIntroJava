@@ -1,4 +1,4 @@
-package DockerIntro;
+package dockerIntro;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,7 +27,7 @@ public class DockerDemo {
 		 * 
 		 * look at it : https://github.com/docker/for-mac/issues/5310#issuecomment-877653653
 		 * 
-		 * comment arreter un container - docker -kill?
+		 * comment arreter un container - docker -kill? docker stop nomIdImage
 		 * peut être j'ai besoin de selenium grid pour utiliser le docker?
 		 * 
 		 * QUESTION : est-il possible de créer un docker-container window sur une machine MAC?
@@ -73,7 +73,8 @@ public class DockerDemo {
 		System.out.println(driver.getTitle());
 		driver.quit();
 		
-		
+		// Pour lancer un test, faut que un conteneur soit en mode run (ouvert)? 
+		//ou c'est le test qui permet de le lancer le conteneur?
 		
 	
 		

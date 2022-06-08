@@ -90,7 +90,7 @@ public class ExcelIntro
 							{
 								
 								//System.out.println(cv.next().getStringCellValue());
-								maListe.add(cv.next().getStringCellValue());		//permet d'ajouter les valeurs des cellules dans la liste
+								maListe.add(cv.next().getStringCellValue());		//permet d'ajouter les valeurs des cellules dans la liste					
 								
 							}
 						}

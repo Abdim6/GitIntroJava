@@ -1,5 +1,9 @@
 package listeners;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -27,7 +31,8 @@ public class DropDown_Listeners extends Base_Listeners{
 	     * Set up browser settings and open the application
 	     */
 
-	    @BeforeClass
+	    @BeforeMethod
+		@BeforeClass
 	    public void setUp() {
 			 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 			 //driver=new FirefoxDriver();
@@ -52,7 +57,7 @@ public class DropDown_Listeners extends Base_Listeners{
 	    { 
 
 	    	test.log(Status.PASS, "Accès à la tableau est -OK-");
-			test.fail("Le test est KO");
+			Assert.fail("Le test est KO");
 			
 	           driver.findElement(By.xpath("//a[@href='/dropdown']")).click();
 	           
@@ -108,7 +113,8 @@ public class DropDown_Listeners extends Base_Listeners{
 	     * Tear down the setup after test completes
 	     **/
 
-	    @AfterClass
+	    @AfterMethod
+		@AfterClass
 	    public void tearDown() 
 	    { 
 	    	test.log(Status.PASS, "Fermeture de driver est -OK-");

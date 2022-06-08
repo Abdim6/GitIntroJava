@@ -1,5 +1,9 @@
 package demo_Rapport;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
 import static org.testng.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
@@ -33,7 +37,8 @@ public class DropDown_Rapport extends Base_Rapport{
 	     * Set up browser settings and open the application
 	     */
 
-	    @BeforeClass
+	    @BeforeMethod
+		@BeforeClass
 	    public void setUp() {
 			 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 			 //driver=new FirefoxDriver();
@@ -58,7 +63,7 @@ public class DropDown_Rapport extends Base_Rapport{
 	    { 
 
 	    	test.log(Status.PASS, "Accès à la tableau est -OK-");
-			test.fail("Le test est KO");
+			Assert.fail("Le test est KO");
 			
 	           driver.findElement(By.xpath("//a[@href='/dropdown']")).click();
 	           
@@ -127,7 +132,7 @@ public class DropDown_Rapport extends Base_Rapport{
 	          else 
 	          {
 
-	  			test.fail("Le titre google est KO");
+	  			Assert.fail("Le titre google est KO");
 	          }
 	    }
 
@@ -136,7 +141,8 @@ public class DropDown_Rapport extends Base_Rapport{
 	     * @throws InterruptedException 
 	     **/
 
-	    @AfterClass
+	    @AfterMethod
+		@AfterClass
 	    public void tearDown() throws InterruptedException 
 	    { 
 

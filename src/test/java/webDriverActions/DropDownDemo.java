@@ -1,5 +1,10 @@
 package webDriverActions;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -7,6 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -21,14 +29,22 @@ public class DropDownDemo {
 		 
 	    /**
 	     * Set up browser settings and open the application
+	     * @throws MalformedURLException 
 	     */
 
-	    @BeforeTest
-	    public void setUp() {
+	    @BeforeMethod
+		@BeforeTest
+	    public void setUp() throws MalformedURLException {
 			 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 			 //driver=new FirefoxDriver();
 	    	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 			driver = new ChromeDriver();
+			
+			//Ci dessous utilisation de docker !
+			//DesiredCapabilities cap = new DesiredCapabilities();
+			//cap.setBrowserName(BrowserType.CHROME);
+			//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+			
 	           
 	//Accéder au site 6play
 	           driver.get("https://the-internet.herokuapp.com/");
@@ -101,7 +117,8 @@ public class DropDownDemo {
 	     * Tear down the setup after test completes
 	     **/
 
-	    @AfterTest
+	    @AfterMethod
+		@AfterTest
 	    public void tearDown() 
 	    { 
 	           driver.quit();

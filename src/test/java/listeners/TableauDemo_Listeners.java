@@ -1,5 +1,9 @@
 package listeners;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +24,8 @@ public class TableauDemo_Listeners extends Base_Listeners{
 			.createNode("Node1")
 			.assignAuthor("abdi").assignCategory("Reg").assignDevice("Chrome");
 	
-    @BeforeClass
+    @BeforeMethod
+	@BeforeClass
     public void setUp() throws InterruptedException {
     	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		driver = new ChromeDriver();
@@ -36,7 +41,7 @@ public class TableauDemo_Listeners extends Base_Listeners{
     public void testActionsClass() throws InterruptedException
     { 
     	test.log(Status.PASS, "Accès à la tableau est -OK-");
-		test.fail("Le test est KO");
+		Assert.fail("Le test est KO");
 		
     	 List<WebElement> listeElem = driver.findElements(By.xpath("//table[@id='tablepress-1']//td"));
     	 String population="";

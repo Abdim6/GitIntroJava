@@ -1,5 +1,8 @@
 package screenShot;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +25,8 @@ public class DropDown_Listeners extends BaseScreenShot{
 		WebDriver driver;
 		
 
-	    @BeforeClass
+	    @BeforeMethod
+		@BeforeClass
 	    public void setUp() {
 			 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 			 //driver=new FirefoxDriver();
@@ -64,7 +68,8 @@ public class DropDown_Listeners extends BaseScreenShot{
 	     * Tear down the setup after test completes
 	     **/
 
-	    @AfterClass
+	    @AfterMethod
+		@AfterClass
 	    public void tearDown() 
 	    { 
 	           driver.quit();

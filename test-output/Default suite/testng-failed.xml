@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="dockerIntro.Test1">
+      <class name="docker_E2Etest.DropDown_Rapport">
         <methods>
-          <include name="monTest1"/>
+          <include name="testGoogle"/>
+          <include name="testSelectFunctionality"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- dockerIntro.Test1 -->
+      </class> <!-- docker_E2Etest.DropDown_Rapport -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

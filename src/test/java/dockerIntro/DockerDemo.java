@@ -6,6 +6,7 @@ import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -36,7 +37,14 @@ public class DockerDemo {
 		 * REFAIS CET EXO : https://www.youtube.com/watch?v=vuHXpQqoNq8&t=26s
 		 * Exemple de doc pour ARCHI Docker : https://geekflare.com/docker-architecture/
 		 * Video Tuto : https://www.youtube.com/watch?v=LJwmYuEaWBY&list=PLUDwpEzHYYLtpm24ojHwubwmMNQildHBc&index=4
-		 */
+		 * Faire des tests en parallèle avec deux browsers différents avec et sans docker 
+		 * 
+		 * 
+		 * #RUn#
+		 * docker run -d -p 4444:4444 seleniarm/standalone-chromium
+		 * docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:3.141.59-yttrium
+		 * 
+		 * */
 
 		/*
 		//DesiredCapabilities cap =  DesiredCapabilities.chrome;
@@ -66,8 +74,10 @@ public class DockerDemo {
 		 * CECI EST UN TEST-2 POUR GIT - GITHUB
 		 */
 		
-		ChromeOptions chromeOptions = new ChromeOptions();
-		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+		//ChromeOptions chromeOptions = new ChromeOptions();
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setBrowserName(BrowserType.CHROME);
+		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 		
 		driver.get("http://www.google.com");
 		System.out.println(driver.getTitle());

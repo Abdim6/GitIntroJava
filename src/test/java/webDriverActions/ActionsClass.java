@@ -1,5 +1,9 @@
 package webDriverActions;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -21,7 +25,8 @@ public class ActionsClass {
      * Set up browser settings and open the application
      */
 
-    @BeforeTest
+    @BeforeMethod
+	@BeforeTest
     public void setUp() {
     	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		driver = new ChromeDriver();
@@ -54,7 +59,7 @@ public class ActionsClass {
            act.doubleClick(doubleClickBtn).build().perform();
            Thread.sleep(2000); 
            WebElement textDoubleClick = driver.findElement(By.xpath("//p[@id='doubleClickMessage']"));
-           Assert.assertTrue(textDoubleClick.isDisplayed());   
+           AssertJUnit.assertTrue(textDoubleClick.isDisplayed());   
            System.out.println(textDoubleClick.getText());
            Thread.sleep(2000); 
            
@@ -65,7 +70,7 @@ public class ActionsClass {
            act.keyDown(Keys.CONTROL).click().build().perform();
            Thread.sleep(2000); 
            WebElement textRightClick = driver.findElement(By.xpath("//p[@id='rightClickMessage']"));
-           Assert.assertTrue(textRightClick.isDisplayed());
+           AssertJUnit.assertTrue(textRightClick.isDisplayed());
            System.out.println(textRightClick.getText());  
            Thread.sleep(2000); 
            
@@ -111,7 +116,8 @@ public class ActionsClass {
      * Tear down the setup after test completes
      **/
 
-    @AfterTest
+    @AfterMethod
+	@AfterTest
     public void tearDown() 
     { 
            driver.quit();

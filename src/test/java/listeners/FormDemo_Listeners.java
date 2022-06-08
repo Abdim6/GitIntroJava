@@ -1,5 +1,10 @@
 package listeners;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -28,7 +33,8 @@ public class FormDemo_Listeners extends Base_Listeners{
 			.createNode("Node2")
 			.assignAuthor("abdi").assignCategory("Reg").assignDevice("Chrome");
 	
-	 @BeforeClass
+	 @BeforeMethod
+	@BeforeClass
 	    public void setUp() {
 			 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 			 //driver=new FirefoxDriver();
@@ -50,16 +56,16 @@ public class FormDemo_Listeners extends Base_Listeners{
 	    public void testAlertPopUp() throws InterruptedException 
 	    { 
 	    	test.log(Status.PASS, "Accès à la tableau est -OK-");
-			test.fail("Le test est KO");
+			Assert.fail("Le test est KO");
 			
 	    	String titreFormulaire = driver.findElement(By.xpath("//h5")).getText();
-	    	Assert.assertTrue(titreFormulaire.contains("Student"));
+	    	AssertJUnit.assertTrue(titreFormulaire.contains("Student"));
 	    	//vérifie si les gens sont renseignés ou pas
 	        Thread.sleep(5000);
 	    	List<WebElement> listInput = driver.findElements(By.xpath("(//input[contains(@id,'gender-radio')])"));
 	    	for (int i=0; i<listInput.size();i++)
 	    	{
-	    		Assert.assertTrue(!listInput.get(i).isSelected());
+	    		AssertJUnit.assertTrue(!listInput.get(i).isSelected());
 	    		System.out.println("Les genres ne sont pas encore renseignés ! ");
 	    	}
 	    	
@@ -74,7 +80,8 @@ public class FormDemo_Listeners extends Base_Listeners{
 	     * Tear down the setup after test completes
 	     **/
 
-	    @AfterClass
+	    @AfterMethod
+		@AfterClass
 	    public void tearDown() 
 	    { 
 	    	test.log(Status.PASS, "Fermeture de driver est -OK-");

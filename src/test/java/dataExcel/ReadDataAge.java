@@ -38,7 +38,9 @@ public class ReadDataAge {
 				{
 					XSSFSheet sheet = workbook.getSheetAt(i);	
 					//FormulaEvaluator formule = workbook.getCreationHelper().createFormulaEvaluator();
+					int nbRow = sheet.findEndOfRowOutlineGroup(1);
 					
+					System.out.println("le nb de ligne est :"+nbRow);
 					for (Row row :sheet)   //Toutes les lignes de la feuille 
 					{
 						for (Cell cell : row)   // Puis toutes les colonnes de lignes - étape par étape
@@ -58,6 +60,7 @@ public class ReadDataAge {
 					}
 					
 				}
+			
 			}
 	}
 }

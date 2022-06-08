@@ -1,5 +1,7 @@
 package webDriverActions;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +21,8 @@ public class tableauDemo {
      * Set up browser settings and open the application
      */
 
-    @BeforeTest
+    @BeforeMethod
+	@BeforeTest
     public void setUp() {
     	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		driver = new ChromeDriver();

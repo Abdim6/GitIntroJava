@@ -1,5 +1,7 @@
 package webDriverActions;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
 import java.io.File;
 import java.io.IOException;
 
@@ -58,7 +60,7 @@ public class ExtentReportClass_demo {
 				.createNode("Node")
 				.assignAuthor("abdi").assignCategory("Reg").assignDevice("Chrome");
 		test.log(Status.FAIL, "Tout est ok");
-		test.fail("Le test est KO");
+		Assert.fail("Le test est KO");
 		test.fail(MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir")+"/Rapport/img.png").build());
 
 		//Capture d'ecran de cas en KO

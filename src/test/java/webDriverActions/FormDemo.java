@@ -1,5 +1,9 @@
 package webDriverActions;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +22,8 @@ import org.testng.annotations.Test;
 public class FormDemo {
 
 	WebDriver driver;
-	 @BeforeTest
+	 @BeforeMethod
+	@BeforeTest
 	    public void setUp() {
 			 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 			 //driver=new FirefoxDriver();
@@ -40,13 +45,13 @@ public class FormDemo {
 	    public void testAlertPopUp() throws InterruptedException 
 	    { 
 	    	String titreFormulaire = driver.findElement(By.xpath("//h5")).getText();
-	    	Assert.assertTrue(titreFormulaire.contains("Student"));
+	    	AssertJUnit.assertTrue(titreFormulaire.contains("Student"));
 	    	//vérifie si les gens sont renseignés ou pas
 	        Thread.sleep(5000);
 	    	List<WebElement> listInput = driver.findElements(By.xpath("(//input[contains(@id,'gender-radio')])"));
 	    	for (int i=0; i<listInput.size();i++)
 	    	{
-	    		Assert.assertTrue(!listInput.get(i).isSelected());
+	    		AssertJUnit.assertTrue(!listInput.get(i).isSelected());
 	    		System.out.println("Les genres ne sont pas encore renseignés ! ");
 	    	}
 	    	
@@ -61,7 +66,8 @@ public class FormDemo {
 	     * Tear down the setup after test completes
 	     **/
 
-	    @AfterTest
+	    @AfterMethod
+		@AfterTest
 	    public void tearDown() 
 	    { 
 	           driver.quit();

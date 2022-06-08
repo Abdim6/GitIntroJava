@@ -1,5 +1,9 @@
 package webDriverActions;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +23,7 @@ import org.testng.annotations.Test;
 public class AlertPopUp {
 	WebDriver driver;
 		
+		@BeforeMethod
 		@BeforeTest
 	    public void setUp() {
 	 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
@@ -67,7 +72,7 @@ public class AlertPopUp {
 	           System.out.println("le titre de la page est : " +driver.getTitle());
 	           System.out.println("l'url de la page est : " +driver.getCurrentUrl());
 	           
-	           Assert.assertTrue(driver.getCurrentUrl().contains("alerts"));
+	           AssertJUnit.assertTrue(driver.getCurrentUrl().contains("alerts"));
 
 	           //Affichage de l'alerte 1 + click  - ok -
 	           driver.findElement(By.xpath("//button[@id='alertButton']")).click();
@@ -97,14 +102,15 @@ public class AlertPopUp {
 	           alert3.dismiss();
 	           Thread.sleep(2000);
 	           String textConfirm = driver.findElement(By.xpath("(//span[@id='confirmResult'])")).getText();
-	           Assert.assertTrue(textConfirm.contains("Cancel"));
+	           AssertJUnit.assertTrue(textConfirm.contains("Cancel"));
 	    }
 
 	    /**
 	     * Teardown the setup after test completes
 	     **/
 
-	    @AfterTest
+	    @AfterMethod
+		@AfterTest
 	    public void tearDown() 
 	    { 
 	           driver.quit();

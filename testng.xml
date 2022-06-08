@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-<listeners>
-	<listener class-name="MercrediTest.monTest.ListenerSansExtent"></listener>
-</listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="MercrediTest.monTest.DropDownDemo"/>
-      <class name="MercrediTest.monTest.tableauDemo"/>
-      <class name="MercrediTest.monTest.FormDemo"/>
+      <class name="webDriverActions.NewTest_Test"/>
+      <class name="Donnees.TestClassNG"/>
+      <class name="listeners.DropDown_Listeners"/>
+      <class name="webDriverActions.TotoTestConnexion"/>
+      <class name="demo_Rapport.DropDown_Rapport"/>
+      <class name="webDriverActions.tableauDemo"/>
+      <class name="dockerIntro.Test1"/>
+      <class name="dockerIntro.Test4"/>
+      <class name="dockerIntro.Test2"/>
+      <class name="screenShot.DropDown_Listeners"/>
+      <class name="webDriverActions.ActionsClass"/>
+      <class name="dockerIntro.Test3"/>
+      <class name="webDriverActions.CheckBox"/>
+      <class name="listeners.TableauDemo_Listeners"/>
+      <class name="demo_Rapport.TableauDemo_Rapport"/>
+      <class name="webDriverActions.AlertPopUp"/>
+      <class name="webDriverActions.testHomePage"/>
+      <class name="webDriverActions.DropDownDemo"/>
+      <class name="webDriverActions.FormDemo"/>
+      <class name="webDriverActions.ExtentReportClass_demo"/>
+      <class name="demo_Rapport.FormDemo_Rapport"/>
+      <class name="listeners.FormDemo_Listeners"/>
+      <class name="webDriverActions.testLanding"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

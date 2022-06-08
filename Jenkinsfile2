@@ -9,7 +9,7 @@ pipeline {
 		steps{
 			withMaven(maven : 'Apache Maven 3.8.5')
       		{
-      		sh "mvn clean"
+      		sh "mvn clean compile"
       		echo "Bon le clean c'est clean"
 			}
 			}

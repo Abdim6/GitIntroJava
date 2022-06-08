@@ -5,7 +5,7 @@ pipeline {
     
   stages {
   
-   stage('Preparation'){	
+   stage('Build'){	
 		steps{
 			withMaven(maven : 'Apache Maven 3.8.5')
       		{
@@ -16,7 +16,7 @@ pipeline {
 			}
  
 			
-    stage ('Build') {
+    stage ('test') {
       steps {
           dir("/Users/abdi.bileh17/Documents/Java/monTest") {
         sh "pwd"

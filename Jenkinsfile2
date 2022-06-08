@@ -5,15 +5,7 @@ pipeline {
     
   stages {
   
-  stage('Preparation'){	
-		steps{
-			withMaven(maven : "Apache Maven 3.8.5" )
-      		{
-      		sh "maven clean"
-      		echo "Bon le clean c'est clean"
-			}
-			}
-			}
+ 
 			
     stage ('Build') {
       steps {
@@ -23,6 +15,18 @@ pipeline {
   		}
   	}
   }
+  
+   stage('Preparation'){	
+		steps{
+			withMaven(maven : "Apache Maven 3.8.5" )
+      		{
+      		sh "maven clean"
+      		echo "Bon le clean c'est clean"
+			}
+			}
+			}
+			
+			
       
       stage ('Deploy') {
       steps {

@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Stay Home"
-sudo docker-compose up -d 
+docker-compose up -d 

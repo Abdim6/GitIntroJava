@@ -1,0 +1,35 @@
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-v2.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-v2.yml down`
+version: '2'
+services:
+  chrome:
+    image: seleniarm/node-chromium:latest
+    shm_size: 2gb
+    depends_on:
+      - seleniarm-hub
+    environment:
+      - SE_EVENT_BUS_HOST=seleniarm-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "6900-6905:5900"
+
+  firefox:
+    image: seleniarm/node-firefox:latest
+    shm_size: 2gb
+    depends_on:
+      - seleniarm-hub
+    environment:
+      - SE_EVENT_BUS_HOST=seleniarm-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+       - "6907:5900"
+      
+  seleniarm-hub:
+    image: seleniarm/hub:latest
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4445:4444"

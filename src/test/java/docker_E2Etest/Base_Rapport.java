@@ -30,8 +30,8 @@ public class Base_Rapport {
 	public WebDriver SetUpDriverBase() throws MalformedURLException  
 	{		
 //Firefox
-		 System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-		 driver=new FirefoxDriver();
+		 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+		 //driver=new FirefoxDriver();
 //Chrome			
 		//System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		//driver = new ChromeDriver();
@@ -40,8 +40,10 @@ public class Base_Rapport {
 
 		System.out.println("début Base setUP");
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setBrowserName(BrowserType.CHROME);
-		//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+		//cap.setBrowserName(BrowserType.CHROME);
+		cap.setBrowserName(BrowserType.FIREFOX);
+		//cap.setBrowserName("Firefox");
+		driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), cap);
 
 		System.out.println("Fin Base setUP");
 		return driver;

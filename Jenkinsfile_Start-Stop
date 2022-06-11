@@ -14,7 +14,7 @@ pipeline {
       stage ('Deploy') {
       steps {
         script {
-          	echo 'J'arrête le conteneur !'
+          	echo "J'arrête le conteneur !"
         	sh 'docker stop 62c21686c85e'
           	echo 'Tout va bien !'
           }

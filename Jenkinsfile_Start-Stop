@@ -8,7 +8,7 @@ pipeline {
           dir("/Users/abdi.bileh17/Documents/Java/monTest") {
         sh "pwd"
         
-        sh '''docker-compose up -d'''
+        sh '''docker compose up -d'''
         
         //sh ("./StartDockerCompose.sh")
         

@@ -1,4 +1,4 @@
-package dockerIntro;
+package grid;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -6,6 +6,7 @@ import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -73,11 +74,13 @@ public class DockerDemo {
 		/**
 		 * CECI EST UN TEST-2 POUR GIT - GITHUB
 		 */
-		
+/*
+		//WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
 		//ChromeOptions chromeOptions = new ChromeOptions();
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setBrowserName(BrowserType.CHROME);
-		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), cap);
+		cap.setBrowserName("chrome");
+		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 		
 		driver.get("http://www.google.com");
 		System.out.println(driver.getTitle());
@@ -85,8 +88,22 @@ public class DockerDemo {
 		
 		// Pour lancer un test, faut que un conteneur soit en mode run (ouvert)? 
 		//ou c'est le test qui permet de le lancer le conteneur?
+		*/
 		
 	
+		
+		ChromeOptions chromeOptions = new ChromeOptions();
+		//chromeOptions.setCapability("browserVersion", "100");
+		//chromeOptions.setCapability("platformName", "Windows");
+		// Showing a test name instead of the session id in the Grid UI
+		//chromeOptions.setCapability("se:name", "My simple test"); 
+		// Other type of metadata can be seen in the Grid UI by clicking on the 
+		// session info or via GraphQL
+		//chromeOptions.setCapability("se:sampleMetadata", "Sample metadata value"); 
+		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
+		driver.get("http://www.google.com");
+		driver.quit();
+
 		
 	}
 

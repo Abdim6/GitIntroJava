@@ -1,0 +1,33 @@
+pipeline {
+  agent any
+  tools {
+    maven "Apache Maven 3.8.5" }
+  stages {
+    stage ('Build') {
+      steps {
+          dir("/Users/abdi.bileh17/Documents/Java/monTest") {
+        sh "pwd"
+        sh 'docker start 62c21686c85e'
+        sh 'mvn test -P Docker'
+  }}}
+      
+      stage ('Deploy') {
+      steps {
+        script {
+          	echo 'J'arrête le conteneur !'
+        	sh 'docker stop 62c21686c85e'
+          	echo 'Tout va bien !'
+          }
+      }
+  }}
+}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				

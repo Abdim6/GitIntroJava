@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-08T12:09:45 CEST" name="Suite" finished-at="2022-06-08T12:10:03 CEST" duration-ms="18168">
+  <suite started-at="2022-06-11T08:21:20 CEST" name="Default suite" finished-at="2022-06-11T08:21:50 CEST" duration-ms="29781">
     <groups>
     </groups>
-    <test started-at="2022-06-08T12:09:45 CEST" name="Test" finished-at="2022-06-08T12:10:03 CEST" duration-ms="18168">
+    <test started-at="2022-06-11T08:21:20 CEST" name="Default test" finished-at="2022-06-11T08:21:50 CEST" duration-ms="29781">
       <class name="docker_E2Etest.DropDown_Rapport">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:docker_E2Etest.DropDown_Rapport@43301423]" started-at="2022-06-08T12:09:45 CEST" name="setUp" finished-at="2022-06-08T12:09:48 CEST" duration-ms="2824" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:docker_E2Etest.DropDown_Rapport@6dbb137d]" started-at="2022-06-11T08:21:21 CEST" name="setUp" finished-at="2022-06-11T08:21:31 CEST" duration-ms="9999" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testGoogle()[pri:0, instance:docker_E2Etest.DropDown_Rapport@43301423]" started-at="2022-06-08T12:09:48 CEST" name="testGoogle" finished-at="2022-06-08T12:09:51 CEST" duration-ms="3030" status="PASS">
+        <test-method signature="testGoogle()[pri:0, instance:docker_E2Etest.DropDown_Rapport@6dbb137d]" started-at="2022-06-11T08:21:31 CEST" name="testGoogle" finished-at="2022-06-11T08:21:34 CEST" duration-ms="3233" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:docker_E2Etest.DropDown_Rapport@43301423]" started-at="2022-06-08T12:09:51 CEST" name="tearDown" finished-at="2022-06-08T12:09:53 CEST" duration-ms="2345" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:docker_E2Etest.DropDown_Rapport@6dbb137d]" started-at="2022-06-11T08:21:34 CEST" name="tearDown" finished-at="2022-06-11T08:21:37 CEST" duration-ms="2916" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:docker_E2Etest.DropDown_Rapport@43301423]" started-at="2022-06-08T12:09:53 CEST" name="setUp" finished-at="2022-06-08T12:09:54 CEST" duration-ms="954" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:docker_E2Etest.DropDown_Rapport@6dbb137d]" started-at="2022-06-11T08:21:37 CEST" name="setUp" finished-at="2022-06-11T08:21:40 CEST" duration-ms="3632" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSelectFunctionality()[pri:1, instance:docker_E2Etest.DropDown_Rapport@43301423]" started-at="2022-06-08T12:09:54 CEST" name="testSelectFunctionality" finished-at="2022-06-08T12:10:01 CEST" duration-ms="6554" status="PASS">
+        <test-method signature="testSelectFunctionality()[pri:1, instance:docker_E2Etest.DropDown_Rapport@6dbb137d]" started-at="2022-06-11T08:21:40 CEST" name="testSelectFunctionality" finished-at="2022-06-11T08:21:48 CEST" duration-ms="7227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSelectFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:docker_E2Etest.DropDown_Rapport@43301423]" started-at="2022-06-08T12:10:01 CEST" name="tearDown" finished-at="2022-06-08T12:10:03 CEST" duration-ms="2391" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:docker_E2Etest.DropDown_Rapport@6dbb137d]" started-at="2022-06-11T08:21:48 CEST" name="tearDown" finished-at="2022-06-11T08:21:50 CEST" duration-ms="2712" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- docker_E2Etest.DropDown_Rapport -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

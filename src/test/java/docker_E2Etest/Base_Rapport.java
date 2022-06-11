@@ -5,6 +5,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -28,9 +29,9 @@ public class Base_Rapport {
 	
 	public WebDriver SetUpDriverBase() throws MalformedURLException  
 	{		
-		//Firefox
-		 //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-		 //driver=new FirefoxDriver();
+//Firefox
+		 System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+		 driver=new FirefoxDriver();
 //Chrome			
 		//System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		//driver = new ChromeDriver();
@@ -40,7 +41,7 @@ public class Base_Rapport {
 		System.out.println("début Base setUP");
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName(BrowserType.CHROME);
-		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+		//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 
 		System.out.println("Fin Base setUP");
 		return driver;

@@ -7,12 +7,13 @@ pipeline {
       steps {
           dir("/Users/abdi.bileh17/Documents/Java/monTest") {
         sh "pwd"
-        //sh 'docker start 62c21686c85e'
-        //sh "chmod +x -R ${'/Users/abdi.bileh17/Documents/Java/monTest/StartDockerCompose.sh'}"
         
-        sh ("./StartDockerCompose.sh")
+        sh 'docker-compose up -d'
+        
+        //sh ("./StartDockerCompose.sh")
+        
         sh 'mvn test -P Docker'
-        sh "./StopDockerCompose.sh"
+        //sh "./StopDockerCompose.sh"
   }}}
       
       stage ('Deploy') {
